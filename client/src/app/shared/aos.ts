@@ -1,5 +1,5 @@
 // import * as animateOnScroll from 'aos';
-import * as AOS from 'aos';
+import AOS from 'aos'
 import { InjectionToken } from '@angular/core';
 
 export const aosToken = AOS;
