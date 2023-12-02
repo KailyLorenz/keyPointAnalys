@@ -34,10 +34,10 @@ app.use('/api/v1/users', userRouter)
 
 
 
-// for all http's methods
-app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404))
-})
+// // for all http's methods
+// app.all('*', (req, res, next) => {
+//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404))
+// })
 
 app.use(globalErrorHandler)
 // for deploy
