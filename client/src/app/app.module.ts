@@ -26,13 +26,7 @@ import { AboutDetailComponent } from './home-page/about/about-detail/about-detai
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from '@angular/common/http';
 import { QuestionsComponent } from './home-page/questions/questions.component';
-// import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from "ngx-swiper-wrapper";
 
-
-// const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-//   direction: 'horizontal',
-//   slidesPerView: 'auto'
-// };
 
 @NgModule({
   declarations: [

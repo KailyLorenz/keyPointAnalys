@@ -10,7 +10,9 @@ const cors = require('cors')
 const app = express();
 const path = require('path')
 // set security HTTP Headers
-app.use(helmet())
+app.use(helmet({
+  contentSecurityPolicy: false
+}))
 app.use(cors())
 // development logging
 if (process.env.NODE_ENV === 'development') {
