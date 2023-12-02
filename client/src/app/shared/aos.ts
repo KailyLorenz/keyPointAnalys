@@ -1,4 +1,5 @@
 // import * as animateOnScroll from 'aos';
+// @ts-ignore
 import AOS from 'aos'
 import { InjectionToken } from '@angular/core';
 
