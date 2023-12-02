@@ -1,0 +1,104 @@
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a [routerLink]='"/"' >Home</a></li>
+        <li>Portfolio Details</li>
+      </ol>
+      <h2>Portfolio Details</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Portfolio Details Section ======= -->
+  <section id="portfolio-details" class="portfolio-details" >
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-8">
+          <swiper
+            [config]="config"
+          >
+            <ng-template class="ratio ratio-4x3" swiperSlide *ngFor="let slide of sliders">
+               <div
+               [ngStyle]="{background: 'url(' + slide.src +') no-repeat top center / contain'}">
+               </div>
+            </ng-template>
+          </swiper>
+          <div class="swiper-pagination"></div>
+<!--          <div class="portfolio-details-slider swiper-container" >-->
+          <!-- image -->
+<!--          <swiper >-->
+<!--&lt;!&ndash;            <swiper-slide *ngFor="let slider of sliders">&ndash;&gt;-->
+<!--              <div class="ratio ratio-4x3" *ngFor="let slider of sliders"-->
+<!--                   [ngStyle]="{background: 'url(' + slider.src +') no-repeat top center / contain'}">-->
+<!--              </div>-->
+<!--&lt;!&ndash;            </swiper-slide>&ndash;&gt;-->
+<!--          </swiper>-->
+<!--          <swiper-container kpdSwiper #swiper [config]="swiperConfig"-->
+<!--                            >-->
+<!--            <swiper-slide *ngFor="let slider of sliders">-->
+<!--              <div class="ratio ratio-4x3"-->
+<!--                   [ngStyle]="{background: 'url(' + slider.src +') no-repeat top center / contain'}">-->
+<!--              </div>-->
+<!--            </swiper-slide>-->
+<!--          </swiper-container>-->
+<!--            <swiper-container initial-slide="0" slides-per-view="1" *ngFor="let slider of sliders">-->
+<!--              <div class="swiper-slide">-->
+<!--                <img [src]="slider.src" alt="">-->
+<!--              </div>-->
+<!--            </swiper-container>-->
+<!--            <swiper-container init="false" class="w-full"  *ngFor="let slider of sliders">-->
+<!--              <swiper-slide class="w-[310px] sm:w-[450px] pb-6">-->
+
+<!--                                  <img [src]="slider.src" alt="">-->
+
+<!--              </swiper-slide>-->
+<!--            </swiper-container>-->
+<!--            <div class="swiper-wrapper align-items-center">-->
+
+<!--              <div class="swiper-slide">-->
+<!--                <img src="assets/img/portfolio/portfolio-1.jpg" alt="">-->
+<!--              </div>-->
+
+<!--              <div class="swiper-slide">-->
+<!--                <img src="assets/img/portfolio/portfolio-2.jpg" alt="">-->
+<!--              </div>-->
+
+<!--              <div class="swiper-slide">-->
+<!--                <img src="assets/img/portfolio/portfolio-3.jpg" alt="">-->
+<!--              </div>-->
+
+<!--            </div>-->
+
+<!--          </div>-->
+        </div>
+
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>Project information</h3>
+            <ul>
+              <li><strong>Category</strong>: Web design</li>
+              <li><strong>Client</strong>: ASU Company</li>
+              <li><strong>Project date</strong>: 01 March, 2020</li>
+              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <h2>This is an example of portfolio detail</h2>
+            <p>
+              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->

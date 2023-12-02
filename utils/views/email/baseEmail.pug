@@ -1,0 +1,46 @@
+//- Email template adapted from https://github.com/leemunroe/responsive-html-email-template
+//- Converted from HTML using https://html2pug.now.sh/
+
+doctype html
+html
+    head
+        meta(name='viewport', content='width=device-width')
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        title= subject
+
+        include _style
+
+    body
+        table.body(role='presentation', border='0', cellpadding='0', cellspacing='0')
+            tbody
+                tr
+                    td
+                    td.container
+                        .content
+                            // START CENTERED WHITE CONTAINER
+                            table.main(role='presentation')
+
+                                // START MAIN AREA
+                                tbody
+                                    tr
+                                        td.wrapper
+                                            table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                                                tbody
+                                                    tr
+                                                        td
+                                                            // CONTENT
+                                                            p Добрый день #{firstName},
+                                                            p Спасибо что обратились к нам, мы рады Вас видеть 🎉🙏
+                                                            p Мы рады помочь вам оптимизировать бизнес процессы Вашей компании и сделать ее успешной и процветающей!
+                                                            p - Артем Овцын, Любовь Вовк, финансовый доцент Фьючерс, главный оптимизатор Женечка
+
+                            // START FOOTER
+                            .footer
+                                table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                                    tbody
+                                        tr
+                                            td.content-block
+                                                span.apple-link KPD Inc, Kалининград, Гагарина
+                                                br
+                                                |  На это письмо не требуется отвечать, мы с Вами свяжемся в ближайшее время. Спасибо
+                    //- td  

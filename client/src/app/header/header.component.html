@@ -1,0 +1,42 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top"
+        [class.header-scrolled]="isActive"
+        [class.sub-header]="subHeader"
+>
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a class="nav-link" [routerLink]='"."' [fragment]='"hero"'>KPD</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+<!--    <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar">
+      <ul>
+<!--        <li routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">-->
+        <li >
+          <a routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link" [routerLink]='"kpd"' [fragment]='"hero"'
+            >Home</a>
+        </li>
+        <li routerLinkActive="active">
+          <a
+            class="nav-link" [routerLink]='"kpd"' [fragment]='"about"'
+             >About</a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="nav-link" [routerLink]='"kpd"' [fragment]='"services"'
+             >Services</a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="nav-link" [routerLink]='"kpd"' [fragment]='"portfolio"'>Portfolio</a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="nav-link" [routerLink]='"kpd"' [fragment]='"contact"'>Contact</a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="getstarted" [routerLink]='"kpd"' [fragment]='"about"'>Get Started</a>
+        </li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+  </div>
+</header><!-- End Header -->
