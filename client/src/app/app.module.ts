@@ -23,10 +23,13 @@ import {HomePageComponent} from "./home-page/home-page.component";
 
 import {aosToken, AosToken} from "./shared/aos";
 import { AboutDetailComponent } from './home-page/about/about-detail/about-detail.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from '@angular/common/http';
 import { QuestionsComponent } from './home-page/questions/questions.component';
-
+import {AlertModule} from "./shared/modules/alert/alert.module";
+import {ToastComponent} from "./shared/components/toast/toast.component";
+import {DropdownDirective} from "./shared/directives/dropdown.directive";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -47,16 +50,21 @@ import { QuestionsComponent } from './home-page/questions/questions.component';
     HomePageComponent,
     AboutDetailComponent,
     QuestionsComponent,
+    ToastComponent,
+    DropdownDirective,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        LightboxModule,
-        AppRoutingModule,
-        SwiperModule,
-        ReactiveFormsModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    LightboxModule,
+    AppRoutingModule,
+    SwiperModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AlertModule,
+    FormsModule,
+    NgbModule,
+  ],
   providers: [
     {provide: AosToken, useValue: aosToken},
     // {

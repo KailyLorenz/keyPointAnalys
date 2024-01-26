@@ -13,5 +13,4 @@ export class AboutDetailComponent implements OnInit {
   ngOnInit(): void {
     this.utilsService.setSubHeader(true)
   }
-
 }

@@ -53,10 +53,11 @@ module.exports = class Email {
                 text,
                 html
             }
-        }else {
+        } else {
             mailOptions = {
                 from: 'kpd.service@gmail.com',
-                to: 'Artem.ovtsyn@gmail.com',
+                to: 'artem.ovtsyn@gmail.com',
+                // to: 'kaily.lorenz@gmail.com',
                 subject: this.subject,
                 text: this.message,
                 html

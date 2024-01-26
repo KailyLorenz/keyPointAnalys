@@ -1,8 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../shared/services/user.service";
-import {error} from "@angular/compiler-cli/src/transformers/util";
 import {Subscription} from "rxjs";
+import {Toast} from 'bootstrap'
 
 @Component({
   selector: 'kpd-contact',
@@ -10,16 +10,16 @@ import {Subscription} from "rxjs";
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit, OnDestroy {
+  @ViewChild('myToast', {static:true}) toastEl!: ElementRef<HTMLDivElement>;
+  subscriptionMessageForUser: Subscription | undefined
+  toast: any
+  messageForUser!: string;
   contactForm!: FormGroup;
-  subscription: Subscription | undefined
 
-  constructor(private userService: UserService) { }
-
-  ngOnDestroy(): void {
-    this.subscription?.unsubscribe()
-  }
+  constructor(private userService: UserService,) { }
 
   ngOnInit(): void {
+    this.toast = new Toast(this.toastEl.nativeElement,{})
     this.contactForm = new FormGroup( {
       'name': new FormControl(null, [Validators.required, Validators.minLength(2)]),
       'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -30,14 +30,26 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   onSubmit(): void {
     this.contactForm.disable();
-    console.log(this.contactForm.value)
-    this.subscription = this.userService.sendContactMe(this.contactForm.value).subscribe(
+    this.subscriptionMessageForUser = this.userService.sendContactMe(this.contactForm.value).subscribe(
       (res: any) => {
-        console.log('res', res)
         this.contactForm.reset()
+        this.show()
+        this.messageForUser = 'Прекрасное начало! Мы получили Ваше письмо'
+        this.contactForm.enable()
+
       },
-      (error: Error) => console.log(error)
+      (error: Error) => {
+        this.messageForUser = 'Something went wrong'
+        this.show()
+        console.log(error)
+      }
     )
-    this.contactForm.reset()
+  }
+  show(){
+    this.toast!.show();
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptionMessageForUser?.unsubscribe()
   }
 }

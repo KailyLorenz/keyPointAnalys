@@ -63,7 +63,7 @@
   padding-right: 10px;
 }
 
-.why-us .accordion-list i {
+.why-us .accordion-list .icon-toggle {
   font-size: 24px;
   position: absolute;
   right: 0;
@@ -75,25 +75,25 @@
   padding: 10px 0 0 0;
 }
 
-.why-us .accordion-list .icon-show {
-  display: none;
-}
+/*.why-us .accordion-list .icon-show {*/
+/*  display: none;*/
+/*}*/
 
 .why-us .accordion-list a.collapsed {
   color: #343a40;
 }
 
-.why-us .accordion-list a.collapsed:hover {
+.why-us .accordion-list a.collapsed:hover, .active {
   color: #47b2e4;
 }
 
-.why-us .accordion-list a.collapsed .icon-show {
-  display: inline-block;
-}
+/*.why-us .accordion-list a.collapsed .icon-show {*/
+/*  display: inline-block;*/
+/*}*/
 
-.why-us .accordion-list a.collapsed .icon-close {
-  display: none;
-}
+/*.why-us .accordion-list a.collapsed .icon-close {*/
+/*  display: none;*/
+/*}*/
 
 @media (max-width: 1024px) {
   .why-us .content, .why-us .accordion-list {

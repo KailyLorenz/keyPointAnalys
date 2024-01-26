@@ -2,13 +2,12 @@ import {Inject, Injectable} from "@angular/core";
 import {DOCUMENT} from "@angular/common";
 import {Subject} from "rxjs";
 
-
-
 @Injectable({providedIn: "root"})
 export class UtilsService{
   // scrollY = new BehaviorSubject(0);
   // scrollY$ = this.scrollY.asObservable();
   subHeader = new Subject<boolean>()
+  navbarCollapsed = new Subject<boolean>()
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
@@ -31,5 +30,10 @@ export class UtilsService{
   // }
   setSubHeader(value: boolean): void {
     this.subHeader.next(value)
+  }
+
+  setNavbarCollapsed(value: boolean): void {
+    this.navbarCollapsed.next(value)
+    console.log('UtilsService')
   }
 }

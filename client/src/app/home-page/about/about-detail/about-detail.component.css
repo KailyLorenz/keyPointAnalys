@@ -36,3 +36,7 @@
   color: #4668a2;
   content: "/";
 }
+
+.container img {
+  width: 100%;
+}

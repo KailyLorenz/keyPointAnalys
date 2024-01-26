@@ -12,6 +12,16 @@ import {AboutDetailComponent} from "./home-page/about/about-detail/about-detail.
 
 
 const routerOptions: ExtraOptions = {
+  // Once the above is enabled, the fragment link will only work on the
+  // first click. This is because, by default, the Router ignores requests
+  // to navigate to the SAME URL that is currently rendered. Unfortunately,
+  // the fragment scrolling is powered by Navigation Events. As such, we
+  // have to tell the Router to re-trigger the Navigation Events even if we
+  // are navigating to the same URL.
+  onSameUrlNavigation: "reload",
+  // Let's enable tracing so that we can see the aforementioned Navigation
+  // Events when the fragment is clicked.
+  enableTracing: true,
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
   scrollOffset: [0, 64],
@@ -69,7 +79,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, routerOptions)],
+  imports: [RouterModule.forRoot(routes, routerOptions )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

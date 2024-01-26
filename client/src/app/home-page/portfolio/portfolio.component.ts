@@ -1,4 +1,5 @@
 import {
+  AfterViewChecked,
   AfterViewInit, Component, ElementRef,
   EventEmitter, HostListener, Inject, OnInit, ViewChild
 } from '@angular/core';
@@ -6,6 +7,7 @@ import {UtilsService} from "../../shared/services/utils.service";
 import * as AOS from 'aos';
 import {Swiper} from "swiper";
 import {AosToken} from "../../shared/aos";
+import {BehaviorSubject} from "rxjs";
 
 declare var GLightbox: any;
 declare var Isotope: any;
@@ -15,7 +17,7 @@ declare var Isotope: any;
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit, AfterViewInit  {
-  filterActive = false
+  load!: boolean
   @ViewChild('portfolioContainer') portfolioContainer: ElementRef | undefined
   portfolio = [
     {
@@ -90,21 +92,19 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
       'name': 'app',
       'details': 'app'
     },
-
-
-
   ]
   list = ['All', 'App', 'Card', 'Web']
   activeItem: string | undefined;
   portfolioIsotope: any;
+  slides$ = new BehaviorSubject<any[]>(['']);
 
   constructor(@Inject(AosToken) aosToken: any) {
-    aosToken.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false
-    });
+    // aosToken.init({
+    //   duration: 1000,
+    //   easing: "ease-in-out",
+    //   once: true,
+    //   mirror: false
+    // });
   }
 
   ngAfterViewInit(): void {
@@ -114,36 +114,62 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
     const portfolioLightbox = GLightbox({
       selector: '.portfolio-lightbox'
     });
+    setTimeout(() => {
+      if (this.portfolioContainer?.nativeElement) {
+        this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
+          itemSelector: '.portfolio-item',
+        });
+      }
+    }, 0)
   }
+
+  ngAfterViewChecked(): void {
+    // console.log('ngAfterViewChecked')
+    // if (!this.load) {
+    //   this.onLoad();
+    // }
+  }
+
 
   ngOnInit(): void {
     /**
      * Portfolio details slider
      */
-    new Swiper('.portfolio-details-slider', {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      }
-    });
+    this.activeItem = 'All'
+    this.load = false
+    // new Swiper('.portfolio-details-slider', {
+    //   speed: 400,
+    //   loop: true,
+    //   autoplay: {
+    //     delay: 5000,
+    //     disableOnInteraction: false
+    //   },
+    //   pagination: {
+    //     el: '.swiper-pagination',
+    //     type: 'bullets',
+    //     clickable: true
+    //   }
+    // });
+    // this.slides$.next(
+    //   Array.from(this.portfolio)
+    // );
+
+
   }
-  @HostListener('window:load') onLoad() {
-    if (this.portfolioContainer?.nativeElement) {
-      this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
-        itemSelector: '.portfolio-item',
-      });
-    }
-  }
+  // @HostListener('window:load') onLoad() {
+  //   console.log('onLoad', this.portfolioContainer?.nativeElement)
+  //
+  //   if (this.portfolioContainer?.nativeElement) {
+  //     this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
+  //       itemSelector: '.portfolio-item',
+  //     });
+  //   }
+  // }
 
   onSelectFilter(item: string) {
+    this.activeItem = item
     const filter = item === 'All' ? '*' : `.filter-${item.toLowerCase()}`
+
     this.portfolioIsotope.arrange({
         filter
       });

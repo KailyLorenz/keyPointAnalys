@@ -1,33 +1,10 @@
 <section id="clients" class="clients section-bg">
   <div class="container">
-
     <div class="row" data-aos="zoom-in">
-
-      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-        <img src="../../../assets/img/clients/client-1.jpg" class="img-fluid" alt="">
+      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center"
+      *ngFor="let client of clients">
+        <img [src]="client.src" class="img-fluid" [alt]="client.alt">
       </div>
-
-      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-        <img src="../../../assets/img/clients/client-2.jpg" class="img-fluid" alt="">
-      </div>
-
-      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-        <img src="../../../assets/img/clients/client-3.jpg" class="img-fluid" alt="">
-      </div>
-
-      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-        <img src="../../../assets/img/clients/client-4.jpg" class="img-fluid" alt="">
-      </div>
-
-      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-        <img src="../../../assets/img/clients/client-5.jpg" class="img-fluid" alt="">
-      </div>
-
-      <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-        <img src="../../../assets/img/clients/client-6.jpg" class="img-fluid" alt="">
-      </div>
-
     </div>
-
   </div>
 </section>

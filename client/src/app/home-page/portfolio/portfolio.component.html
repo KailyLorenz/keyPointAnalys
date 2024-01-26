@@ -2,14 +2,15 @@
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
-      <h2>Portfolio</h2>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      <h2>Типовые решения для вашего бизнеса</h2>
+      <p>Развернем копмлексное решение за 1 день</p>
     </div>
 
     <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
       <li *ngFor="let item of list" (click)="onSelectFilter(item)" data-filter="{}"
-          [class.filter-active]="item == activeItem || item === 'All'">{{ item }}
+          [class.filter-active]="item === activeItem">{{ item }}
       </li>
+
     </ul>
 
     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" #portfolioContainer>
@@ -21,7 +22,9 @@
         <div class="portfolio-info">
           <h4>{{ data.name }}</h4>
           <p>{{ data.details + id}}</p>
-          <a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+          <a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
+             [attr.title]="data.name">
+            <i class="bx bx-plus"></i></a>
           <a [routerLink]="['portfolio', data.id]" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
         </div>
       </div>

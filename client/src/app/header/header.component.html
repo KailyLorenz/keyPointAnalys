@@ -1,42 +1,85 @@
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top"
-        [class.header-scrolled]="isActive"
-        [class.sub-header]="subHeader"
+
+
+<div id="header" class="fixed-top d-flex">
+  <div class="align-items-center w-100">
+  <nav id="navbar"
+      class="navbar navbar-expand-lg"
+     [class.header-scrolled]="isActive"
+     [class.sub-header]="subHeader"
+     [class.fixed-top]="isActive"
 >
-  <div class="container d-flex align-items-center">
-
-    <h1 class="logo me-auto"><a class="nav-link" [routerLink]='"."' [fragment]='"hero"'>KPD</a></h1>
-    <!-- Uncomment below if you prefer to use an image logo -->
-<!--    <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-    <nav id="navbar" class="navbar">
-      <ul>
-<!--        <li routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">-->
-        <li >
-          <a routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
-            class="nav-link" [routerLink]='"kpd"' [fragment]='"hero"'
-            >Home</a>
+  <div class="container align-items-center">
+    <h1 class="logo"><a class="nav-link" [routerLink]='"kpd"' [fragment]='"hero"'>Ключевая аналитика</a></h1>
+    <button id="navbarButton"
+      (click)="isNavbarCollapsed = !isNavbarCollapsed"
+            class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+          <i class="bi bi-list mobile-nav-toggle"></i>
+    </button>
+    <div kpdNavbar [kpdNavbarCollapsed] = "isNavbarCollapsed"
+         (scroll)="scrollHandler($event)"
+         [ngbCollapse]="!isNavbarCollapsed"
+         [@smoothCollapse]="!isNavbarCollapsed?'initial':'final'"
+         class="collapse navbar-collapse"
+         id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<!--        <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">-->
+<!--          <a class="nav-link"-->
+<!--             [routerLink]='"kpd"'-->
+<!--             routerLinkActive="active"-->
+<!--             [fragment]='"hero"'-->
+<!--             [routerLinkActiveOptions]="linkActiveOptions"-->
+<!--             [class.active]="(activeFragment)==='hero'">-->
+<!--&lt;!&ndash;             [class.active]="activeRoute === 'kpd'"&ndash;&gt;-->
+<!--&lt;!&ndash;          >&ndash;&gt;-->
+<!--&lt;!&ndash;            &ndash;&gt;-->
+<!--            Home</a>-->
+<!--        </li >-->
+        <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+          <a class="nav-link"
+             [routerLink]='"kpd"'
+             [fragment]='"about"'
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="linkActiveOptions"
+             [class.active]="(activeFragment)==='about'"
+          >О нас</a>
         </li>
-        <li routerLinkActive="active">
-          <a
-            class="nav-link" [routerLink]='"kpd"' [fragment]='"about"'
-             >About</a>
+        <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+          <a class="nav-link"
+             [routerLink]='"kpd"'
+             [fragment]='"services"'
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="linkActiveOptions"
+          >Услуги</a>
         </li>
-        <li routerLinkActive="active">
-          <a class="nav-link" [routerLink]='"kpd"' [fragment]='"services"'
-             >Services</a>
+        <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+          <a class="nav-link"
+             [routerLink]='"kpd"'
+             [fragment]='"portfolio"'
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="linkActiveOptions">Типовые решения</a>
         </li>
-        <li routerLinkActive="active">
-          <a class="nav-link" [routerLink]='"kpd"' [fragment]='"portfolio"'>Portfolio</a>
+        <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+          <a class="nav-link" [routerLink]='"kpd"' [fragment]='"contact"'
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="linkActiveOptions">Контакты</a>
         </li>
-        <li routerLinkActive="active">
-          <a class="nav-link" [routerLink]='"kpd"' [fragment]='"contact"'>Contact</a>
-        </li>
-        <li routerLinkActive="active">
-          <a class="getstarted" [routerLink]='"kpd"' [fragment]='"about"'>Get Started</a>
+        <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+          <a class="getstarted" [routerLink]='"kpd"'
+             [fragment]='"about"'
+             routerLinkActive="activeGetStarted"
+             [routerLinkActiveOptions]="linkActiveOptions"
+          >
+          Get Started</a>
         </li>
       </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+
+    </div>
   </div>
-</header><!-- End Header -->
+</nav>
+  </div>
+</div>

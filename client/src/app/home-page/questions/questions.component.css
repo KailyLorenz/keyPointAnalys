@@ -38,38 +38,43 @@
   color: #47b2e4;
 }
 
-.faq .faq-list .icon-show, .faq .faq-list .icon-close {
+.faq .faq-list .icon-toggle {
   font-size: 24px;
   position: absolute;
   right: 0;
   top: 0;
 }
-
+/*.faq .faq-list bx {*/
+/*  font-size: 24px;*/
+/*  position: absolute;*/
+/*  right: 0;*/
+/*  top: 0;*/
+/*}*/
 .faq .faq-list p {
   margin-bottom: 0;
   padding: 10px 0 0 0;
 }
 
-.faq .faq-list .icon-show {
-  display: none;
-}
+/*.faq .faq-list .icon-show {*/
+/*  display: none;*/
+/*}*/
 
 .faq .faq-list a.collapsed {
   color: #37517e;
   transition: 0.3s;
 }
 
-.faq .faq-list a.collapsed:hover {
+.faq .faq-list a.collapsed:hover, .active{
   color: #47b2e4;
 }
 
-.faq .faq-list a.collapsed .icon-show {
-  display: inline-block;
-}
+/*.faq .faq-list a.collapsed .icon-show {*/
+/*  display: inline-block;*/
+/*}*/
 
-.faq .faq-list a.collapsed .icon-close {
-  display: none;
-}
+/*.faq .faq-list a.collapsed .icon-close {*/
+/*  display: none;*/
+/*}*/
 
 @media (max-width: 1200px) {
   .faq .faq-list {

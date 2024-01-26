@@ -1,4 +1,4 @@
-export interface ContactNeInterface {
+export interface ContactMeInterface {
   email: string,
   name: string,
   message: string,
