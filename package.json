@@ -6,12 +6,11 @@
     "npm": "10.2.4"
   },
   "scripts": {
-    "start": "node server",
     "server": "nodemon server",
     "client-install": "npm install --prefix client",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "prod": "concurrently \"npm run start:prod\" \"npm run client\"",
+    "start": "concurrently \"npm run start:prod\" \"npm run client\"",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "heroku-postbuild": "NODE_ENV=production npm run client-install && npm run build --prefix client"
   },
