@@ -16,7 +16,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
+    "target": "es2022",
     "module": "es2020",
     "typeRoots": [
       "node_modules/@types"
@@ -25,6 +25,7 @@
       "es2020",
       "dom"
     ],
+    "useDefineForClassFields": false,
     "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
@@ -32,5 +33,5 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  },
+  }
 }
