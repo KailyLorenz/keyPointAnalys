@@ -10,7 +10,7 @@
     "client-install": "npm install --prefix client",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "npm run start:prod",
+    "start": "concurrently \"npm run start:prod\" \"npm run client\"",
     "start:prod": "NODE_ENV=production NODE_OPTIONS=--trace-deprecation nodemon server.js",
     "heroku-postbuild": "NODE_ENV=production npm run client-install && npm run build --prefix client"
   },
