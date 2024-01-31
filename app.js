@@ -44,22 +44,22 @@ app.use('/api/v1/users', userRouter)
 app.use(globalErrorHandler)
 // for deploy
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/dist/kpd100'))
+  // app.use(express.static('client/dist/kpd100'))
 
-  console.log('production')
-  // app.get('/*', (req, res) => {
-  //   res.sendFile(
-  //       path.join(__dirname, '../remult-angular-todo/browser', 'index.html')
-  //   );
-  // });
-
-
-  app.get('*', (req, res) => {
+  app.use(express.static(path.join(__dirname, '../client/dist/kpd100')));
+  app.get('/*', (req, res) => {
     res.sendFile(
-        path.resolve(
-            __dirname, 'client', 'dist', 'kpd100', 'index.html'
-        )
-    )
-  })
+        path.join(__dirname, '../client/dist/kpd100', 'index.html')
+    );
+  });
+
+
+  // app.get('*', (req, res) => {
+  //   res.sendFile(
+  //       path.resolve(
+  //           __dirname, 'client', 'dist', 'kpd100', 'index.html'
+  //       )
+  //   )
+  // })
 }
 module.exports = app
