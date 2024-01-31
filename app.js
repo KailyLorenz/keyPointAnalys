@@ -66,7 +66,7 @@ app.use(globalErrorHandler)
 // })
 // app.use(express.static(process.cwd()+'../client/dist/kpd100'))
 
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
   app.use(express.static(process.cwd()+'/client/dist/kpd100'))
   app.get('*', (req, res) => {
     res.sendFile(
@@ -94,5 +94,5 @@ if (process.env.NODE_ENV === 'production') {
   //       )
   //   )
   // })
-}
+// }
 module.exports = app
