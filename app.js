@@ -46,6 +46,14 @@ app.use(globalErrorHandler)
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/dist/kpd100'))
 
+  console.log('production')
+  // app.get('/*', (req, res) => {
+  //   res.sendFile(
+  //       path.join(__dirname, '../remult-angular-todo/browser', 'index.html')
+  //   );
+  // });
+
+
   app.get('*', (req, res) => {
     res.sendFile(
         path.resolve(
