@@ -53,7 +53,7 @@ app.get('/*', (req, res) => {
 app.use(express.static(path.join(__dirname, '../client/src')))
 app.get('*', (req, res) => {
   res.sendFile(
-      path.join(__dirname, '../client/src', 'index.html')
+      './index.html'
   )
 })
 if (process.env.NODE_ENV === 'production') {
