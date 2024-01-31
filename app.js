@@ -52,6 +52,7 @@ app.use(globalErrorHandler)
 
 
 app.get('*', (req, res) => {
+  res.end('Hello World!');
 //   res.sendFile(
 //       path.resolve(__dirname, 'client/frontend.html')
 //   )
