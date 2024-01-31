@@ -11,7 +11,7 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "npm run start:prod",
-    "start:prod": "--omit=dev NODE_OPTIONS=--trace-deprecation node server.js",
+    "start:prod": "NODE_OPTIONS=--trace-deprecation node server.js",
     "heroku-postbuild": "NODE_ENV=production npm run client-install && npm run build --prefix client"
   },
   "private": true,
