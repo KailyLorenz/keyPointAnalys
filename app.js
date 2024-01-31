@@ -50,13 +50,33 @@ app.use(globalErrorHandler)
 //   );
 // });
 
-app.use(express.static(path.join(__dirname, '../client')))
-app.get('*', (req, res) => {
-  res.sendFile(
-      path.resolve(__dirname, 'client/frontend.html')
-  )
-})
+
+// app.get('*', (req, res) => {
+//   res.sendFile(
+//       path.resolve(__dirname, 'client/frontend.html')
+//   )
+// })
+// app.get('*', (req, res) => {
+//   app.use(express.static(process.cwd()+'../client/dist/kpd100'))
+//   // res.sendFile(
+//   //     path.resolve(
+//   //         __dirname, 'client', 'dist', 'kpd100', 'index.html'
+//   //     )
+//   // )
+// })
+// app.use(express.static(process.cwd()+'../client/dist/kpd100'))
+
 if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(process.cwd()+'/client/dist/kpd100'))
+  app.get('*', (req, res) => {
+    res.sendFile(
+
+        // path.join(__dirname, '../client/dist/kpd100', 'index.html')
+        path.resolve(
+            __dirname, 'client', 'dist', 'kpd100', 'index.html'
+        )
+    )
+  })
   // app.use(express.static('client/dist/kpd100'))
 
   // app.use(express.static(path.join(__dirname, '../client/dist/kpd100')));
