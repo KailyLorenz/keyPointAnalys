@@ -70,8 +70,9 @@ app.use(globalErrorHandler)
 // if (process.env.NODE_ENV === 'production') {
 
 
-  app.use(express.static(process.cwd()+'/client/dist/kpd100'))
-  app.get('*', (req, res) => {
+  // app.use(express.static(process.cwd()+'/client/dist/kpd100'))
+app.use(express.static(process.cwd()+'/client/dist/kpd100'))
+app.get('/*', (req, res) => {
     res.sendFile(
 
         // path.join(__dirname, '../client/dist/kpd100', 'index.html')
@@ -79,7 +80,7 @@ app.use(globalErrorHandler)
             __dirname, 'client', 'dist', 'kpd100', 'index.html'
         )
     )
-  })
+})
 
 
 
