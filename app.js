@@ -51,12 +51,12 @@ app.use(globalErrorHandler)
 // });
 
 
-app.get('*', (req, res) => {
-  res.end('Hello World!');
-//   res.sendFile(
-//       path.resolve(__dirname, 'client/frontend.html')
-//   )
-})
+// app.get('*', (req, res) => {
+//   res.end('Hello World!');
+// //   res.sendFile(
+// //       path.resolve(__dirname, 'client/frontend.html')
+// //   )
+// })
 // app.get('*', (req, res) => {
 //   app.use(express.static(process.cwd()+'../client/dist/kpd100'))
 //   // res.sendFile(
@@ -70,16 +70,16 @@ app.get('*', (req, res) => {
 // if (process.env.NODE_ENV === 'production') {
 
 
-  // !!!!!!!!!!!!!!! app.use(express.static(process.cwd()+'/client/dist/kpd100'))
-  // app.get('*', (req, res) => {
-  //   res.sendFile(
-  //
-  //       // path.join(__dirname, '../client/dist/kpd100', 'index.html')
-  //       path.resolve(
-  //           __dirname, 'client', 'dist', 'kpd100', 'index.html'
-  //       )
-  //   )
-  // })
+  app.use(express.static(process.cwd()+'/client/dist/kpd100'))
+  app.get('*', (req, res) => {
+    res.sendFile(
+
+        // path.join(__dirname, '../client/dist/kpd100', 'index.html')
+        path.resolve(
+            __dirname, 'client', 'dist', 'kpd100', 'index.html'
+        )
+    )
+  })
 
 
 
