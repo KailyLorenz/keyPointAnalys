@@ -8,19 +8,19 @@ import {Component, OnInit} from '@angular/core';
 export class WhyUsComponent implements OnInit {
 
   thesis = [
-    {'link': 'Id interdum velit laoreet id donec ultrices',
+    {'link': 'Люди и взаимодействия важнее процессов и инструментов',
       'text': 'Feugiat pretium nibh ipsum consequat. \n' +
         '                  Tempus iaculis urna id volutpat lacus laoreet \n' +
         '                  non curabitur gravida. Venenatis lectus magna \n' +
         '                  fringilla urna porttitor rhoncus dolor purus non.'},
-    {'link': 'Dolor sit amet consectetur adipiscing elit?',
+    {'link': 'Работающий продукт важнее исчерпывающей документации',
       'text': 'Dolor sit amet consectetur adipiscing elit \n' +
         '                  pellentesque habitant morbi. Id interdum velit \n' +
         '                  laoreet id donec ultrices. Fringilla phasellus faucibus \n' +
         '                  scelerisque eleifend donec pretium. Est pellentesque elit \n' +
         '                  ullamcorper dignissim. Mauris ultrices eros in cursus \n' +
         '                  turpis massa tincidunt dui.'},
-    {'link': 'Feugiat scelerisque varius morbi enim nunc?',
+    {'link': 'Мы готовы к изменениям следованию первоначальному плану',
       'text': 'Eleifend mi in nulla posuere sollicitudin aliquam \n' +
         '                  ultrices sagittis orci. Faucibus pulvinar elementum \n' +
         '                  integer enim. Sem nulla pharetra diam sit amet nisl suscipit. \n' +

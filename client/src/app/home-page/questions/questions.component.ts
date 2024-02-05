@@ -8,38 +8,28 @@ import { Component, OnInit } from '@angular/core';
 export class QuestionsComponent implements OnInit {
   questions = [
     { 'question': 'Соглашение о конфиденциальности (NDA)',
-      'answer': 'Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id \n' +
-        '              volutpat lacus laoreet non curabitur gravida. \n' +
-        '              Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.'},
+      'answer': 'Подпишем соглашение о  полной конфиденциальности'},
     { 'question': 'Интервью с Вами (1-2 часа) ',
-      'answer': 'Аудит вашего управленческого учета, определение KPI для анализа и источников хранения данных'},
+      'answer': 'Аудит вашего управленческого учета, ' +
+        'определение KPI для анализа и источников хранения данных'},
     { 'question': 'Создание ТЗ и его защита перед Заказчиком',
-      'answer': 'Eleifend mi in nulla posuere sollicitudin aliquam \n' +
-        '              ultrices sagittis orci. Faucibus pulvinar elementum \n' +
-        '              integer enim. Sem nulla pharetra diam sit amet nisl \n' +
-        '              suscipit. Rutrum tellus pellentesque eu tincidunt. \n' +
-        '              Lectus urna duis convallis convallis tellus. Urna \n' +
-        '              molestie at elementum eu facilisis sed odio morbi quis'},
-    { 'question': 'Разработка решение (проекта',
-      'answer': 'Molestie a iaculis at erat pellentesque adipiscing commodo. \n' +
-        '              Dignissim suspendisse in est ante in. Nunc vel risus commodo \n' +
-        '              viverra maecenas accumsan. Sit amet nisl suscipit adipiscing \n' +
-        '              bibendum est. Purus gravida quis blandit turpis cursus in.'},
+      'answer': 'После проведения Интервью, мы течение недели ' +
+        'подготовим техническое задания, для согласования ' +
+        'его с Вами'},
+    { 'question': 'Разработка решение проекта',
+      'answer': 'Наша команда разработчиков в кратчайшие сроки ' +
+        'создаст проект, проведет тестирование всех мер, и ' +
+        'после отдаст Вам готовое решение Вашей проблемы'},
     {
       'question': 'Внедрение и передача Заказчику. Обучение сотрудников',
-      'answer': 'Laoreet sit amet cursus sit amet dictum sit amet justo. \n' +
-        '              Mauris vitae ultricies leo integer malesuada nunc vel.\n' +
-        '              Tincidunt eget nullam non nisi est sit amet. Turpis nunc \n' +
-        '              eget lorem dolor sed. Ut venenatis tellus in metus vulputate \n' +
-        '              eu scelerisque.'
+      'answer': 'Мы можем развернуть проект как в web Power BI, так и на Report Server. ' +
+        'После развертывания проекта мы проведем обучения с пользовательским ' +
+        'функционалом системы отчетности'
     },
     {
       'question': 'Техническая поддержка и сопровождение',
-      'answer': 'Laoreet sit amet cursus sit amet dictum sit amet justo. \n' +
-        '              Mauris vitae ultricies leo integer malesuada nunc vel.\n' +
-        '              Tincidunt eget nullam non nisi est sit amet. Turpis nunc \n' +
-        '              eget lorem dolor sed. Ut venenatis tellus in metus vulputate \n' +
-        '              eu scelerisque.'
+      'answer': 'После завершения проекта, мы готовы ' +
+        'развивать и поддерживать Вашу систему'
     }
   ]
   openAccordion: boolean[] = []

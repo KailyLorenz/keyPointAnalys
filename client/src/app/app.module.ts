@@ -64,6 +64,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     AlertModule,
     FormsModule,
     NgbModule,
+    RouterModule
   ],
   providers: [
     {provide: AosToken, useValue: aosToken},

@@ -122,10 +122,10 @@ export class SkillsComponent implements OnInit, AfterViewInit {
 
   // @ViewChildren('progress', {read: true}) progress: QueryList<ElementRef> | undefined;
   skills = [
-    {name: 'Javascript', percent: 90},
-    {name: 'TypeScript', percent: 80},
-    {name: 'Java', percent: 25},
-    {name: 'Photoshop', percent: 50},
+    {name: 'Оптимизация слабых мест бизнес-процессов', percent: 90},
+    {name: 'Чистая прибыль', percent: 50},
+    {name: 'Управление ресурсами', percent: 75},
+    {name: 'Эффективность', percent: 80},
   ]
 
   constructor(private utilsService: UtilsService, private elementRef: ElementRef,
