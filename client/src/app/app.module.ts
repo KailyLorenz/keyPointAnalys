@@ -30,7 +30,13 @@ import {AlertModule} from "./shared/modules/alert/alert.module";
 import {ToastComponent} from "./shared/components/toast/toast.component";
 import {DropdownDirective} from "./shared/directives/dropdown.directive";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {CommonModule} from "@angular/common";
+import {AngularYandexMapsModule, YaConfig} from "angular8-yandex-maps";
 
+const mapConfig: YaConfig = {
+  apikey: '28099cef-0440-4b38-b8a5-0cdbd162c57a',
+  lang: 'ru_RU',
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,16 +61,17 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     LightboxModule,
-    AppRoutingModule,
     SwiperModule,
     ReactiveFormsModule,
     HttpClientModule,
     AlertModule,
     FormsModule,
     NgbModule,
-    RouterModule
+    AngularYandexMapsModule.forRoot(mapConfig)
   ],
   providers: [
     {provide: AosToken, useValue: aosToken},

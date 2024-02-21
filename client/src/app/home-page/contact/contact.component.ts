@@ -16,7 +16,9 @@ export class ContactComponent implements OnInit, OnDestroy {
   messageForUser!: string;
   contactForm!: FormGroup;
 
-  constructor(private userService: UserService,) { }
+  constructor(private userService: UserService,) {
+
+  }
 
   ngOnInit(): void {
     this.toast = new Toast(this.toastEl.nativeElement,{})

@@ -9,8 +9,8 @@
     "server": "nodemon server",
     "client-install": "npm install --prefix client",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "node server.js",
+    "dev": "concurrently \"NODE_ENV=production npm run server\" \"npm run client\"",
+    "start": "NODE_ENV=production node server.js",
     "heroku-postbuild": "NODE_ENV=production npm run client-install && npm run build --prefix client"
   },
   "private": true,
@@ -29,6 +29,7 @@
     "nodemailer": "^6.9.5",
     "npm": "^10.2.4",
     "pug": "^3.0.2",
+    "sib-api-v3-sdk": "^8.5.0",
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {

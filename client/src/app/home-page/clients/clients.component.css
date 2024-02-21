@@ -10,7 +10,12 @@
   padding: 15px 0;
   filter: grayscale(100);
 }
+/*.clients:last-child {*/
 
+/*}*/
+.list-img:last-child img {
+    max-width: 45%;
+}
 .clients img:hover {
   filter: none;
   transform: scale(1.1);

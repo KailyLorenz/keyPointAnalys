@@ -8,18 +8,23 @@ module.exports = class Email {
         this.from = process.env.EMAIL_FROM;
         this.firstName = user.name.split(' ')[0];
         this.message = user.message;
+        this.email = user.email;
         this.subject = user.subject;
     }
 
     newTransport() {
         if(process.env.NODE_ENV === 'production') {
+            console.log('production')
             return nodemailer.createTransport({
                 host: "smtp-relay.brevo.com",
+                // port: 465,
+                // secure: true, // true for 465, false for other ports
                 port: 587,
                 secure: false, // true for 465, false for other ports
                 auth: {
                      user: 'kaily.lorenz@gmail.com',
-                     pass: 'xsmtpsib-b0a62ffe02d04b2e651debf35edad198f0ae7f123cc8f467965d867bf00b25f8-b1qd9wEcxLO0fMK6'
+                     pass: 'rhP7GqUgB4stwQZM'
+                     // pass: 'xsmtpsib-b0a62ffe02d04b2e651debf35edad198f0ae7f123cc8f467965d867bf00b25f8-b1qd9wEcxLO0fMK6'
                 },
             });
 
@@ -39,9 +44,10 @@ module.exports = class Email {
         const html = pug.renderFile(`${__dirname}/views/email/${template}.pug`, {
             firstName: this.firstName,
             message: this.message,
-            subject: this.subject
+            subject: this.subject,
+            email: this.email
         })
-        console.log('firstName', this.firstName)
+        // console.log('firstName', this.firstName)
         //2 Define email options
         const text = htmlToText.convert(html)
         let mailOptions
@@ -56,10 +62,11 @@ module.exports = class Email {
         } else {
             mailOptions = {
                 from: 'kpd.service@gmail.com',
-                to: 'artem.ovtsyn@gmail.com',
-                // to: 'kaily.lorenz@gmail.com',
+                // to: 'artem.ovtsyn@gmail.com',
+                to: 'kaily.lorenz@gmail.com',
                 subject: this.subject,
                 text: this.message,
+                email: this.email,
                 html
             }
         }
@@ -68,11 +75,11 @@ module.exports = class Email {
     }
 
     async sendContactMe() {
-        await this.send('baseEmail', 'welcome to KPD')
+        await this.send('baseEmail', 'Добро пожаловать в Ключевую Аналитику')
     }
 
     async sendContactToAdmin() {
-        await this.send('baseEmailAdmin', 'from KPD', true)
+        await this.send('baseEmailAdmin', 'Ключевая Аналитика сервис', true)
     }
 
 }

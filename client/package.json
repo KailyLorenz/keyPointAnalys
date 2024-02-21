@@ -30,6 +30,7 @@
     "@popperjs/core": "^2.11.6",
     "@types/bootstrap": "^5.2.10",
     "@types/swiper": "^6.0.0",
+    "angular8-yandex-maps": "^17.1.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.11.2",
