@@ -52,11 +52,7 @@ app.use(globalErrorHandler)
 
 
 // app.get('*', (req, res) => {
-//   res.end('Hello World!');
-// //   res.sendFile(
-// //       path.resolve(__dirname, 'client/frontend.html')
-// //   )
-// })
+
 // app.get('*', (req, res) => {
 //   app.use(express.static(process.cwd()+'../client/dist/kpd100'))
 //   // res.sendFile(
