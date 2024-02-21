@@ -37,9 +37,10 @@ app.use('/api/v1/users', userRouter)
 
 
 // // for all http's methods
-app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404))
-})
+
+// app.all('*', (req, res, next) => {
+//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404))
+// })
 
 app.use(globalErrorHandler)
 // for deploy
@@ -69,9 +70,8 @@ app.use(globalErrorHandler)
   // app.use(express.static(process.cwd()+'/client/dist/kpd100'))
 // app.use(express.static(process.cwd()+'/client/dist/kpd100'))
 app.use(express.static('client/dist/kpd100'))
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(
-
         // path.join(__dirname, '../client/dist/kpd100', 'index.html')
         path.resolve(
             __dirname, 'client', 'dist', 'kpd100', 'index.html'
