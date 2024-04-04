@@ -28,7 +28,7 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/kpd', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   // { path: 'kpd', component: HomePageComponent},
   { path: '', component: HomePageComponent},
   {
