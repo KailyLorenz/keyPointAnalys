@@ -28,8 +28,9 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
-  { path: '', redirectTo: '/kpd', pathMatch: 'full' },
-  { path: 'kpd', component: HomePageComponent},
+  // { path: '', redirectTo: '/kpd', pathMatch: 'full' },
+  // { path: 'kpd', component: HomePageComponent},
+  { path: '', component: HomePageComponent},
   {
     path: 'hero',
     component: HeroComponent,
@@ -39,7 +40,7 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'kpd/about-more',
+    path: 'about-more',
     component: AboutDetailComponent
   },
 

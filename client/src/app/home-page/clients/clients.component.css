@@ -1,3 +1,7 @@
+#content > .list-img:not(:first-child) img{
+  max-height: 40%;
+
+}
 .clients {
   padding: 12px 0;
   text-align: center;
@@ -10,9 +14,7 @@
   padding: 15px 0;
   filter: grayscale(100);
 }
-/*.clients:last-child {*/
 
-/*}*/
 .list-img:last-child img {
     max-width: 45%;
 }
@@ -20,6 +22,7 @@
   filter: none;
   transform: scale(1.1);
 }
+
 
 @media (max-width: 768px) {
   .clients img {

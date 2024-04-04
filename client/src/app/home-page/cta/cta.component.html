@@ -3,11 +3,17 @@
 
     <div class="row">
       <div class="col-lg-9 text-center text-lg-start">
-        <h3>Call To Action</h3>
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h3>Связаться с нами</h3>
+        <p> Вы можете связаться с нами по электронной почте и оставить заявку.
+        </p>
+        <p>
+          Мы ее рассмотрим и обязательно с Вами свяжемся, для дальнейшего сотрудничества.        </p>
       </div>
       <div class="col-lg-3 cta-btn-container text-center">
-        <a class="cta-btn align-middle" href="#">Call To Action</a>
+<!--        <a class="cta-btn align-middle" [routerLink]='' [fragment]='"contact"'>Связаться с нами</a>-->
+        <a class="cta-btn align-middle" [routerLink]='""' [fragment]='"contact"'
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="linkActiveOptions">Связаться с нами</a>
       </div>
     </div>
 
