@@ -217,3 +217,8 @@ h1.logo img {
     width: 50%;
   }
 }
+@media (max-width: 764px) {
+  h1.logo a{
+    font-size: initial;
+  }
+}
