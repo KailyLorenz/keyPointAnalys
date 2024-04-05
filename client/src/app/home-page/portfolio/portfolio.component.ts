@@ -140,11 +140,12 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
     this.load = false
     setTimeout(() => {
       if (this.portfolioContainer?.nativeElement) {
+        console.log('this.portfolioContainer?.nativeElement', this.portfolioContainer?.nativeElement)
         this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
           itemSelector: '.portfolio-item',
         });
       }
-    }, 0)
+    }, 60)
     // new Swiper('.portfolio-details-slider', {
     //   speed: 400,
     //   loop: true,
