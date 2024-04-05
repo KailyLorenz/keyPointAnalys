@@ -154,3 +154,11 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+  .section-title h2{
+    font-size: 20px;
+
+  }
+
+}
