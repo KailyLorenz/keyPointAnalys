@@ -17,8 +17,8 @@
 
       <div class="col-lg-4 col-md-6 portfolio-item"
            [class]="data.filter"
-           *ngFor="let data of portfolio; let id=index">
-        <div class="portfolio-img"><img [src]="data.img" class="img-fluid" [alt]="data.name"></div>
+           *ngFor="let data of portfolio; let id=index" >
+        <div class="portfolio-img"><img [src]="data.img" class="img-fluid" [alt]="data.name" (load)="loaded()"></div>
         <div class="portfolio-info">
           <h4>{{ data.name }}</h4>
           <p>{{ data.details + id}}</p>

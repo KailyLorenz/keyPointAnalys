@@ -18,6 +18,7 @@ declare var Isotope: any;
 })
 export class PortfolioComponent implements OnInit, AfterViewInit  {
   load!: boolean
+  loadedImages = 0
   @ViewChild('portfolioContainer') portfolioContainer: ElementRef | undefined
   portfolio = [
     {
@@ -121,6 +122,20 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
     const portfolioLightbox = GLightbox({
       selector: '.portfolio-lightbox'
     });
+    // if (this.portfolioContainer?.nativeElement) {
+    //   console.log('this.portfolioContainer?.nativeElement', this.portfolioContainer?.nativeElement)
+    //   this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
+    //     itemSelector: '.portfolio-item',
+    //   });
+    // }
+    // setTimeout(() => {
+    //   if (this.portfolioContainer?.nativeElement) {
+    //     console.log('this.portfolioContainer?.nativeElement', this.portfolioContainer?.nativeElement)
+    //     this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
+    //       itemSelector: '.portfolio-item',
+    //     });
+    //   }
+    // }, 0)
 
   }
 
@@ -138,14 +153,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
      */
     this.activeItem = 'All'
     this.load = false
-    setTimeout(() => {
-      if (this.portfolioContainer?.nativeElement) {
-        console.log('this.portfolioContainer?.nativeElement', this.portfolioContainer?.nativeElement)
-        this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
-          itemSelector: '.portfolio-item',
-        });
-      }
-    }, 60)
+
     // new Swiper('.portfolio-details-slider', {
     //   speed: 400,
     //   loop: true,
@@ -185,5 +193,19 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
       this.portfolioIsotope.on('arrangeComplete', function () {
         AOS.refresh()
       });
+  }
+  loaded(){
+    this.loadedImages++;
+    console.log('this.portfolio.length',this.portfolio.length)
+    console.log('this.portfolio.length',this.loadedImages)
+    if(this.portfolio.length === this.loadedImages){
+      if (this.portfolioContainer?.nativeElement) {
+        console.log('this.portfolioContainer?.nativeElement', this.portfolioContainer?.nativeElement)
+        this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
+          itemSelector: '.portfolio-item',
+        });
+      }
+      //all images loaded
+    }
   }
 }
