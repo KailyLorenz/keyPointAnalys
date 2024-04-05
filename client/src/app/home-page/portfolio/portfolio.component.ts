@@ -105,13 +105,13 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
     //   once: true,
     //   mirror: false
     // });
-    setTimeout(() => {
-      if (this.portfolioContainer?.nativeElement) {
-        this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
-          itemSelector: '.portfolio-item',
-        });
-      }
-    }, 5)
+    // setTimeout(() => {
+    //   if (this.portfolioContainer?.nativeElement) {
+    //     this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
+    //       itemSelector: '.portfolio-item',
+    //     });
+    //   }
+    // }, 5)
   }
 
   ngAfterViewInit(): void {
@@ -121,13 +121,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
     const portfolioLightbox = GLightbox({
       selector: '.portfolio-lightbox'
     });
-    setTimeout(() => {
-      if (this.portfolioContainer?.nativeElement) {
-        this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
-          itemSelector: '.portfolio-item',
-        });
-      }
-    }, 0)
+
   }
 
   ngAfterViewChecked(): void {
@@ -144,6 +138,13 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
      */
     this.activeItem = 'All'
     this.load = false
+    setTimeout(() => {
+      if (this.portfolioContainer?.nativeElement) {
+        this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
+          itemSelector: '.portfolio-item',
+        });
+      }
+    }, 0)
     // new Swiper('.portfolio-details-slider', {
     //   speed: 400,
     //   loop: true,
