@@ -9,7 +9,7 @@
      [class.fixed-top]="isActive"
 >
   <div class="container align-items-center">
-    <h1 class="logo"><a class="nav-link" [routerLink]='""' [fragment]='"hero"'>Ключевая аналитика</a></h1>
+    <h1 class="logo"><a class="nav-link" [routerLink]="['/']" [fragment]='"hero"'>Ключевая аналитика</a></h1>
     <button id="navbarButton"
       (click)="isNavbarCollapsed = !isNavbarCollapsed"
             class="navbar-toggler" type="button"
@@ -41,7 +41,7 @@
 <!--        </li >-->
         <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a class="nav-link"
-             [routerLink]='""'
+             [routerLink]="['/']"
              [fragment]='"about"'
              routerLinkActive="active"
              [routerLinkActiveOptions]="linkActiveOptions"
@@ -50,7 +50,7 @@
         </li>
         <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a class="nav-link"
-             [routerLink]='""'
+             [routerLink]="['/']"
              [fragment]='"services"'
              routerLinkActive="active"
              [routerLinkActiveOptions]="linkActiveOptions"
@@ -58,7 +58,7 @@
         </li>
         <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
           <a class="nav-link"
-             [routerLink]='""'
+             [routerLink]="['/']"
              [fragment]='"portfolio"'
              routerLinkActive="active"
              [routerLinkActiveOptions]="linkActiveOptions">Типовые решения</a>
@@ -69,7 +69,7 @@
              [routerLinkActiveOptions]="linkActiveOptions">Контакты</a>
         </li>
         <li class="nav-item" (click)="isNavbarCollapsed = !isNavbarCollapsed">
-          <a class="getstarted" [routerLink]='""'
+          <a class="getstarted" [routerLink]="['/']"
              [fragment]='"about"'
              routerLinkActive="activeGetStarted"
              [routerLinkActiveOptions]="linkActiveOptions"
