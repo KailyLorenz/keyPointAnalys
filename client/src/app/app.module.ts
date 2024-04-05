@@ -30,7 +30,7 @@ import {AlertModule} from "./shared/modules/alert/alert.module";
 import {ToastComponent} from "./shared/components/toast/toast.component";
 import {DropdownDirective} from "./shared/directives/dropdown.directive";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {CommonModule} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {AngularYandexMapsModule, YaConfig} from "angular8-yandex-maps";
 
 const mapConfig: YaConfig = {
@@ -71,7 +71,7 @@ const mapConfig: YaConfig = {
     AlertModule,
     FormsModule,
     NgbModule,
-    AngularYandexMapsModule.forRoot(mapConfig)
+    AngularYandexMapsModule.forRoot(mapConfig),
   ],
   providers: [
     {provide: AosToken, useValue: aosToken},

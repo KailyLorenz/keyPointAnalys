@@ -121,13 +121,13 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
     const portfolioLightbox = GLightbox({
       selector: '.portfolio-lightbox'
     });
-    // setTimeout(() => {
-    //   if (this.portfolioContainer?.nativeElement) {
-    //     this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
-    //       itemSelector: '.portfolio-item',
-    //     });
-    //   }
-    // }, 0)
+    setTimeout(() => {
+      if (this.portfolioContainer?.nativeElement) {
+        this.portfolioIsotope = new Isotope(this.portfolioContainer.nativeElement, {
+          itemSelector: '.portfolio-item',
+        });
+      }
+    }, 0)
   }
 
   ngAfterViewChecked(): void {
