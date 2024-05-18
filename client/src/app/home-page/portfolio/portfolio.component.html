@@ -18,14 +18,20 @@
       <div class="col-lg-4 col-md-6 portfolio-item"
            [class]="data.filter"
            *ngFor="let data of portfolio; let id=index" >
-        <div class="portfolio-img"><img [src]="data.img" class="img-fluid" [alt]="data.name" (load)="loaded()"></div>
+        <div class="portfolio-img"><a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
+          <img [src]="data.img" class="img-fluid" [alt]="data.name" (load)="loaded()">
+        </a>
+        ></div>
         <div class="portfolio-info">
 <!--          <h4>{{ data.name }}</h4>-->
           <p>{{ data.details }}</p>
           <a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
              [attr.title]="data.name">
             <i class="bx bx-plus"></i></a>
-          <a [routerLink]="['portfolio', data.id]" class="details-link" title="Подробнее"><i class="bx bx-link"></i></a>
+          <a [routerLink]="['portfolio', data.id]" class="details-link" title="Посмотреть отчет в Power BI">
+            <img class="bi" src="assets/img/icons/bi.png">
+<!--            <i class="bx bx-link"></i>-->
+          </a>
         </div>
       </div>
     </div>

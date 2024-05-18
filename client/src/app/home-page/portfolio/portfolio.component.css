@@ -1,3 +1,7 @@
+.bi {
+  height: 16px;
+  width: 16px;
+}
 .portfolio #portfolio-flters {
   list-style: none;
   margin-bottom: 20px;
@@ -63,7 +67,7 @@
 
 .portfolio .portfolio-item .portfolio-info .preview-link, .portfolio .portfolio-item .portfolio-info .details-link {
   position: absolute;
-  right: 40px;
+  right: 30px;
   font-size: 24px;
   top: calc(50% - 18px);
   color: #fff;
@@ -85,7 +89,9 @@
 .portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
 }
-
+.portfolio .portfolio-item .portfolio-info .details-link {
+  top: -1px;
+}
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
