@@ -7,8 +7,8 @@
     </div>
 
     <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-      <li *ngFor="let item of list" (click)="onSelectFilter(item)" data-filter="{}"
-          [class.filter-active]="item === activeItem">{{ item }}
+      <li *ngFor="let item of list" (click)="onSelectFilter(item.filter)" data-filter="{}"
+          [class.filter-active]="item.filter === activeItem">{{ item.name }}
       </li>
 
     </ul>
@@ -20,12 +20,12 @@
            *ngFor="let data of portfolio; let id=index" >
         <div class="portfolio-img"><img [src]="data.img" class="img-fluid" [alt]="data.name" (load)="loaded()"></div>
         <div class="portfolio-info">
-          <h4>{{ data.name }}</h4>
-          <p>{{ data.details + id}}</p>
+<!--          <h4>{{ data.name }}</h4>-->
+          <p>{{ data.details }}</p>
           <a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
              [attr.title]="data.name">
             <i class="bx bx-plus"></i></a>
-          <a [routerLink]="['portfolio', data.id]" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+          <a [routerLink]="['portfolio', data.id]" class="details-link" title="Подробнее"><i class="bx bx-link"></i></a>
         </div>
       </div>
     </div>

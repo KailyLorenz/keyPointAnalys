@@ -44,6 +44,7 @@
   transition: all 0.3s;
   background: rgba(55, 81, 126, 0.8);
   padding: 10px 15px;
+  /*height: 40px;*/
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {

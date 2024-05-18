@@ -55,12 +55,12 @@ const routes: Routes = [
     path: 'services',
     component: ServicesComponent,
   },
+  // {
+  //   path: 'portfolio',
+  //   component: PortfolioComponent,
+  // },
   {
     path: 'portfolio',
-    component: PortfolioComponent,
-  },
-  {
-    path: 'kpd/portfolio',
     component: PortfolioDetailComponent, children: [
       {
         path: ':id',

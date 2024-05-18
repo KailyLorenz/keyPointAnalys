@@ -5,7 +5,7 @@
     <div class="container">
 
       <ol>
-        <li><a [routerLink]='"/"' >Home</a></li>
+        <li><a [routerLink]='"/"' >Главная</a></li>
         <li>Portfolio Details</li>
       </ol>
       <h2>Portfolio Details</h2>
@@ -20,16 +20,23 @@
       <div class="row gy-4">
 
         <div class="col-lg-8">
-          <swiper
-            [config]="config"
-          >
-            <ng-template class="ratio ratio-4x3" swiperSlide *ngFor="let slide of sliders">
-               <div
-               [ngStyle]="{background: 'url(' + slide.src +') no-repeat top center / contain'}">
-               </div>
-            </ng-template>
-          </swiper>
-          <div class="swiper-pagination"></div>
+
+<!--          <swiper-->
+<!--            [config]="config"-->
+<!--          >-->
+<!--            <ng-template class="ratio ratio-4x3" swiperSlide *ngFor="let slide of sliders">-->
+<!--               <div-->
+<!--               [ngStyle]="{background: 'url(' + slide.src +') no-repeat top center / contain'}">-->
+<!--               </div>-->
+<!--            </ng-template>-->
+<!--          </swiper>-->
+<!--          <div class="swiper-pagination"></div>-->
+<!--          width="1140" height="541.25"-->
+          <iframe title="ОСВ_v4-1"
+
+                  src="
+                  https://app.powerbi.com/view?r=eyJrIjoiOWJiYzYzMzgtODUxZS00M2FlLWIwNjUtZDI5YWNlOGViYzdiIiwidCI6IjVkZWJiZTM2LWYwZjktNGFlNy04YjkxLTJiYjc1NDRiMGJmMyIsImMiOjl9"
+                  frameborder="0" allowFullScreen="true"></iframe>
         </div>
 
         <div class="col-lg-4">
@@ -51,6 +58,26 @@
         </div>
 
       </div>
+<!--      <div>-->
+
+<!--                <div class="col-lg-4">-->
+<!--                  <div class="portfolio-info">-->
+<!--                    <h3>Project information</h3>-->
+<!--                    <ul>-->
+<!--                      <li><strong>Category</strong>: Web design</li>-->
+<!--                      <li><strong>Client</strong>: ASU Company</li>-->
+<!--                      <li><strong>Project date</strong>: 01 March, 2020</li>-->
+<!--                      <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>-->
+<!--                    </ul>-->
+<!--                  </div>-->
+<!--                  <div class="portfolio-description">-->
+<!--                    <h2>This is an example of portfolio detail</h2>-->
+<!--                    <p>-->
+<!--                      Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.-->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--      </div>-->
 
     </div>
   </section><!-- End Portfolio Details Section -->

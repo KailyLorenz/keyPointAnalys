@@ -18,15 +18,15 @@ SwiperCore.use([Autoplay, Pagination]);
   styleUrls: ['./portfolio-detail.component.css']
 })
 export class PortfolioDetailComponent implements OnInit, AfterContentInit, AfterViewInit{
-  @ViewChild('swiperSlideShow') swiperSlideShow!: any;
+  // @ViewChild('swiperSlideShow') swiperSlideShow!: any;
   subHeader = false
-  index = 0;
-  config!: SwiperOptions
-  sliders = [
-    {'src': "assets/img/portfolio/portfolio-1.jpg"},
-    {'src': "assets/img/portfolio/portfolio-2.jpg"},
-    {'src': "assets/img/portfolio/portfolio-3.jpg"},
-  ]
+  // index = 0;
+  // config!: SwiperOptions
+  // sliders = [
+  //   {'src': "assets/img/portfolio/portfolio-1.jpg"},
+  //   {'src': "assets/img/portfolio/portfolio-2.jpg"},
+  //   {'src': "assets/img/portfolio/portfolio-3.jpg"},
+  // ]
 
   constructor(@Inject(AosToken) aosToken: any, private route: ActivatedRoute,
               private utilsService: UtilsService) {
@@ -39,28 +39,31 @@ export class PortfolioDetailComponent implements OnInit, AfterContentInit, After
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.utilsService.setSubHeader(true)
-    })
-    this.config = {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false
-      },
-      pagination: {clickable: true, dynamicBullets: true},
-    };
+    // this.route.params.subscribe((params: Params) => {
+    //   this.utilsService.setSubHeader(true)
+    // })
+    // this.config = {
+    //   speed: 400,
+    //   loop: true,
+    //   autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: false
+    //   },
+    //   pagination: {clickable: true, dynamicBullets: true},
+    // };
   }
 
   ngAfterContentInit (): void {}
+
+  ngAfterViewInit(): void {
+  }
   // slideChange(swiper: any) {
   //   this.index = swiper.detail[0].activeIndex;
   // }
 
-  ngAfterViewInit(): void {
-    // Start autoplay
-    this.swiperSlideShow?.swiperRef.autoplay.start();
-  }
+  // ngAfterViewInit(): void {
+  //   // Start autoplay
+  //   this.swiperSlideShow?.swiperRef.autoplay.start();
+  // }
 
 }
