@@ -32,6 +32,8 @@ import {DropdownDirective} from "./shared/directives/dropdown.directive";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {AngularYandexMapsModule, YaConfig} from "angular8-yandex-maps";
+import {SafePipe} from "./shared/pipes/safePipe";
+import {SolutionComponent} from "./shared/components/solution/solution.component";
 
 const mapConfig: YaConfig = {
   apikey: '28099cef-0440-4b38-b8a5-0cdbd162c57a',
@@ -56,8 +58,10 @@ const mapConfig: YaConfig = {
     HomePageComponent,
     AboutDetailComponent,
     QuestionsComponent,
+    SolutionComponent,
     ToastComponent,
     DropdownDirective,
+    SafePipe
   ],
   imports: [
     BrowserModule,

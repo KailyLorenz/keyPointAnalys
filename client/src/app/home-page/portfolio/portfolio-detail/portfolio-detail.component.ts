@@ -19,7 +19,21 @@ SwiperCore.use([Autoplay, Pagination]);
 })
 export class PortfolioDetailComponent implements OnInit, AfterContentInit, AfterViewInit{
   // @ViewChild('swiperSlideShow') swiperSlideShow!: any;
+  id!: string
+  srcPowerBi: string | undefined = ''
   subHeader = false
+  listPowerBi = new Map([
+    ['1', ''],
+    ['2', ''],
+    ['3', ''],
+    ['4', ''],
+    ['5', ''],
+    ['6', ''],
+    ['7', 'https://app.powerbi.com/view?r=eyJrIjoiOWJiYzYzMzgtODUxZS00M2FlLWIwNjUtZDI5YWNlOGViYzdiIiwidCI6IjVkZWJiZTM2LWYwZjktNGFlNy04YjkxLTJiYjc1NDRiMGJmMyIsImMiOjl9'],
+    ['8', ''],
+    ['9', ''],
+  ]
+)
   // index = 0;
   // config!: SwiperOptions
   // sliders = [
@@ -39,9 +53,31 @@ export class PortfolioDetailComponent implements OnInit, AfterContentInit, After
   }
 
   ngOnInit(): void {
-    // this.route.params.subscribe((params: Params) => {
-    //   this.utilsService.setSubHeader(true)
+    // this.route.paramMap.subscribe((params: Params) => {
+    //   console.log('params', params)
+    //   this.id = params.get['id']
+    //   console.log('id', this.id)
+    //   // this.utilsService.setSubHeader(true)
     // })
+    const sub = this.route.params.subscribe(params => {
+        this.id = params["id"]
+        console.log('id1', this.id)
+        // const key = `'${this.id}'`
+        this.srcPowerBi = this.listPowerBi.get(this.id)
+        console.log('LINK', this.srcPowerBi)
+        console.log('id', this.id)
+    }
+    )
+
+    // this.id = this.route.snapshot.params['id'];
+    // console.log('id', this.id)
+
+    // if (this.id) {
+    //
+    //   console.log('LINK', this.srcPowerBi)
+    // }
+
+
     // this.config = {
     //   speed: 400,
     //   loop: true,

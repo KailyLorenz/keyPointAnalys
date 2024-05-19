@@ -32,11 +32,10 @@
 <!--          </swiper>-->
 <!--          <div class="swiper-pagination"></div>-->
 <!--          width="1140" height="541.25"-->
-          <iframe title="ОСВ_v4-1"
-
-                  src="
-                  https://app.powerbi.com/view?r=eyJrIjoiOWJiYzYzMzgtODUxZS00M2FlLWIwNjUtZDI5YWNlOGViYzdiIiwidCI6IjVkZWJiZTM2LWYwZjktNGFlNy04YjkxLTJiYjc1NDRiMGJmMyIsImMiOjl9"
+          <iframe *ngIf= 'srcPowerBi; else notFoundBlock' title="ОСВ_v4-1"
+                  [src] = 'srcPowerBi  | safe'
                   frameborder="0" allowFullScreen="true"></iframe>
+          <ng-template #notFoundBlock> Отчет PowerBI находится в стадии разработки</ng-template>
         </div>
 
         <div class="col-lg-4">

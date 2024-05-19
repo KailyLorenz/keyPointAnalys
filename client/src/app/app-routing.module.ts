@@ -9,6 +9,7 @@ import {PortfolioDetailComponent} from "./home-page/portfolio/portfolio-detail/p
 import {ContactComponent} from "./home-page/contact/contact.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {AboutDetailComponent} from "./home-page/about/about-detail/about-detail.component";
+import {SolutionComponent} from "./shared/components/solution/solution.component";
 
 
 const routerOptions: ExtraOptions = {
@@ -47,7 +48,7 @@ const routes: Routes = [
   //   component: AboutComponent, children: [
   //     {
   //       path: 'about-more',
-  //       component: AboutDetailComponent
+  //       component: SolutionComponent
   //     }
   //   ]
   // },
@@ -60,14 +61,22 @@ const routes: Routes = [
   //   component: PortfolioComponent,
   // },
   {
-    path: 'portfolio',
-    component: PortfolioDetailComponent, children: [
-      {
-        path: ':id',
-        component: PortfolioDetailComponent,
-      },
-    ]
+    path: 'portfolio/:id',
+    component: PortfolioDetailComponent
   },
+  {
+    path: 'solution/:type',
+    component: SolutionComponent
+  },
+  // {
+  //   path: 'portfolio',
+  //   component: PortfolioDetailComponent, children: [
+  //     {
+  //       path: ':id',
+  //       component: PortfolioDetailComponent,
+  //     },
+  //   ]
+  // },
   {
     path: 'contact',
     component: ContactComponent,
