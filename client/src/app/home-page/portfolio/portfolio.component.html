@@ -18,16 +18,27 @@
       <div class="col-lg-4 col-md-6 portfolio-item"
            [class]="data.filter"
            *ngFor="let data of portfolio; let id=index" >
-        <div class="portfolio-img"><a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
-          <img [src]="data.img" class="img-fluid" [alt]="data.name" (load)="loaded()">
-        </a>
+        <div class="portfolio-img">
+<!--          <a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">-->
+<!--          <a href="" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"> <iframe-->
+<!--              frameborder="0" allowFullScreen="true" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"-->
+<!--              href="https://app.powerbi.com/view?r=eyJrIjoiOWJiYzYzMzgtODUxZS00M2FlLWIwNjUtZDI5YWNlOGViYzdiIiwidCI6IjVkZWJiZTM2LWYwZjktNGFlNy04YjkxLTJiYjc1NDRiMGJmMyIsImMiOjl9">-->
+<!--            </iframe></a>-->
+            <a [routerLink]="['portfolio', data.id]">
+              <img [src]="data.img" class="img-fluid" [alt]="data.name" (load)="loaded()">
+            </a>
+<!--          </a>-->
         </div>
         <div class="portfolio-info">
 <!--          <h4>{{ data.name }}</h4>-->
           <p>{{ data.details }}</p>
-          <a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"
-             [attr.title]="data.name">
-            <i class="bx bx-plus"></i></a>
+<!--          <a [href]="data.img" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"-->
+<!--             [attr.title]="data.name">-->
+<!--            <i class="bx bx-plus"></i></a>-->
+<!--          <iframe href="https://app.powerbi.com/view?r=eyJrIjoiOWJiYzYzMzgtODUxZS00M2FlLWIwNjUtZDI5YWNlOGViYzdiIiwidCI6IjVkZWJiZTM2LWYwZjktNGFlNy04YjkxLTJiYjc1NDRiMGJmMyIsImMiOjl9"-->
+<!--                  data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"-->
+<!--             [attr.title]="data.name">-->
+<!--            <i class="bx bx-plus"></i></iframe>-->
           <a [routerLink]="['portfolio', data.id]" class="details-link" title="Посмотреть отчет в Power BI">
             <img class="bi" src="assets/img/icons/bi.png">
 <!--            <i class="bx bx-link"></i>-->
@@ -38,3 +49,8 @@
 
   </div>
 </section>
+
+
+<!--<iframe title="ОСВ_v4-1"-->
+<!--        src="https://app.powerbi.com/view?r=eyJrIjoiOWJiYzYzMzgtODUxZS00M2FlLWIwNjUtZDI5YWNlOGViYzdiIiwidCI6IjVkZWJiZTM2LWYwZjktNGFlNy04YjkxLTJiYjc1NDRiMGJmMyIsImMiOjl9"-->
+<!--        frameborder="0" allowFullScreen="true"></iframe>-->

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {UtilsService} from "../../services/utils.service";
+import {UtilsService} from "../../shared/services/utils.service";
 
 @Component({
   selector: 'app-about-detail',

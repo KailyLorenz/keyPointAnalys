@@ -1,6 +1,6 @@
 {
-  "name": "kpd100",
-  "version": "0.0.0",
+  "name": "kpa",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng serve",
     "start": "ng serve --proxy-config proxy.conf.json",

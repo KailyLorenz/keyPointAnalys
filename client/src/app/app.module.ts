@@ -33,7 +33,8 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {AngularYandexMapsModule, YaConfig} from "angular8-yandex-maps";
 import {SafePipe} from "./shared/pipes/safePipe";
-import {SolutionComponent} from "./shared/components/solution/solution.component";
+import {SolutionComponent} from "./footer/solution/solution.component";
+import {OptionComponent} from "./home-page/services/option/option.component";
 
 const mapConfig: YaConfig = {
   apikey: '28099cef-0440-4b38-b8a5-0cdbd162c57a',
@@ -59,6 +60,7 @@ const mapConfig: YaConfig = {
     AboutDetailComponent,
     QuestionsComponent,
     SolutionComponent,
+    OptionComponent,
     ToastComponent,
     DropdownDirective,
     SafePipe

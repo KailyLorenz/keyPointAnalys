@@ -220,4 +220,8 @@ export class PortfolioComponent implements OnInit, AfterViewInit  {
       //all images loaded
     }
   }
+
+  preview(id: string) {
+
+  }
 }

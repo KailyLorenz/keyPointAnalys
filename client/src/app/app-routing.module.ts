@@ -9,7 +9,8 @@ import {PortfolioDetailComponent} from "./home-page/portfolio/portfolio-detail/p
 import {ContactComponent} from "./home-page/contact/contact.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {AboutDetailComponent} from "./home-page/about/about-detail/about-detail.component";
-import {SolutionComponent} from "./shared/components/solution/solution.component";
+import {SolutionComponent} from "./footer/solution/solution.component";
+import {OptionComponent} from "./home-page/services/option/option.component";
 
 
 const routerOptions: ExtraOptions = {
@@ -48,7 +49,7 @@ const routes: Routes = [
   //   component: AboutComponent, children: [
   //     {
   //       path: 'about-more',
-  //       component: SolutionComponent
+  //       component: OptionComponent
   //     }
   //   ]
   // },
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: 'solution/:type',
     component: SolutionComponent
+  },
+  {
+    path: 'option/:type',
+    component: OptionComponent
   },
   // {
   //   path: 'portfolio',
